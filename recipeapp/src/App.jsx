@@ -1,6 +1,7 @@
 import {useState} from "react";
 import initialRecipes from "./data";
 import Navbar from "./components/Navbar";
+import RecipeCard from "./components/RecipeCard";
 
 
 function App(){
@@ -9,6 +10,7 @@ function App(){
   return(
     <div>
       <Navbar/>
+      
     </div>
   )
 }
