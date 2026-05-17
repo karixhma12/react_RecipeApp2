@@ -1,12 +1,12 @@
 import RecipeCard from "./RecipeCard"
 
-function RecipeList({recipes}){
+function RecipeList({recipes,deleteRecipe}){
     return(
         <div>
             <h2> All Recipes </h2>
             <div>
                 {recipes.map((recipe)=>{
-                return <RecipeCard key={recipe.id} recipe={recipe}/>
+                return <RecipeCard deleteRecipe={deleteRecipe} key={recipe.id} recipe={recipe}/>
                 })}
             </div>    
         </div>

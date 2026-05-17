@@ -14,10 +14,18 @@ function App(){
     setRecipes([...recipes,newRecipe]);
   }
 
+  function deleteRecipe(id){
+    const newRecipes = recipes.filter(recipe=>{
+      return recipe.id!= id
+    })
+
+    setRecipes(newRecipes);
+  }
+
   return(
     <div>
       <Navbar setShowModal={setShowModal}/>
-      <RecipeList recipes={recipes}/>
+      <RecipeList recipes={recipes} deleteRecipe={deleteRecipe}/>
       {showModal && <AddRecipeForm setShowModal={setShowModal} addRecipe={addRecipe}/>}
     </div>
   )
