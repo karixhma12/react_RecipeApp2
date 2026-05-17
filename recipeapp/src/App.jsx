@@ -1,5 +1,6 @@
 import {useState} from "react";
 import initialRecipes from "./data";
+import Navbar from "./components/Navbar";
 
 
 function App(){
@@ -7,7 +8,7 @@ function App(){
   const [isDarkMode, setIsDarkMode] = useState(false);
   return(
     <div>
-      Recipe App 
+      <Navbar/>
     </div>
   )
 }
