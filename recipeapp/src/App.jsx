@@ -2,6 +2,7 @@ import {useState} from "react";
 import initialRecipes from "./data";
 import Navbar from "./components/Navbar";
 import RecipeCard from "./components/RecipeCard";
+import RecipeList from "./components/RecipeList";
 
 
 function App(){
@@ -10,7 +11,7 @@ function App(){
   return(
     <div>
       <Navbar/>
-      
+      <RecipeList recipes={recipes}/>
     </div>
   )
 }
