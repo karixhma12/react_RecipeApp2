@@ -1,16 +1,42 @@
-# React + Vite
+# 🍽️ Recipe App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive recipe management app built with React. This was my first React project, built to learn core React concepts from scratch.
 
-Currently, two official plugins are available:
+## 🔗 Live Demo
+[View Live App](https://karixhma12.github.io/react_RecipeApp2/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
+- 📋 Browse 15 pre-loaded recipes
+- ➕ Add new recipes via a modal form
+- 🗑️ Delete recipes
+- 🔍 Search recipes by name
+- 🏷️ Filter by category (Breakfast, Lunch, Dinner)
+- 🌙 Dark / Light mode toggle
+- 📖 View full recipe detail (ingredients + steps)
 
-## React Compiler
+## 🧠 React Concepts Learned
+- `useState` — managing application state
+- `useEffect` — (known prior)
+- `props` — passing data and functions between components
+- `Context API + useContext` — global theme state without prop drilling
+- `useRef` — reading input values without re-rendering
+- Conditional rendering
+- Lifting state up
+- Event bubbling and stopPropagation
+- Array methods in JSX (map, filter)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
+- React (Vite)
+- Plain CSS
+- GitHub Pages (deployment)
 
-## Expanding the ESLint configuration
+## 🚀 Run Locally
+```bash
+git clone https://github.com/karixhma12/react_RecipeApp2.git
+cd react_RecipeApp2/recipeapp
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📸 Screenshots
+(Add screenshots here)
