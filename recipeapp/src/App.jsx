@@ -11,7 +11,8 @@ import "./App.css";
 function App(){
   const [recipes,setRecipes] = useState(initialRecipes);
   const [showModal, setShowModal] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
 
   function addRecipe(newRecipe){
     setRecipes([...recipes,newRecipe]);
@@ -25,11 +26,20 @@ function App(){
     setRecipes(newRecipes);
   }
 
+  let filteredRecipes = recipes; 
+  
+  if(searchTerm!=''){
+    filteredRecipes = recipes.filter((recipe)=>{
+    return recipe.title.toLowerCase().includes(searchTerm.toLowerCase());
+    })
+  }
+  
+
   return(
     <ThemeContext.Provider value={{isDarkMode,setIsDarkMode}}>
       <div className = {isDarkMode ? 'dark' : 'light'}>
-        <Navbar setShowModal={setShowModal}/>
-        <RecipeList recipes={recipes} deleteRecipe={deleteRecipe}/>
+        <Navbar setShowModal={setShowModal} setSearchTerm={setSearchTerm}/>
+        <RecipeList recipes={filteredRecipes} deleteRecipe={deleteRecipe}/>
         {showModal && <AddRecipeForm setShowModal={setShowModal} addRecipe={addRecipe}/>}
       </div>
     </ThemeContext.Provider>  
