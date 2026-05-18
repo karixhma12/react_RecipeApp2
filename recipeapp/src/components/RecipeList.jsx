@@ -1,6 +1,6 @@
 import RecipeCard from "./RecipeCard"
 
-function RecipeList({recipes,deleteRecipe, setSelectedCategory, selectedCategory}){
+function RecipeList({recipes,deleteRecipe, setSelectedCategory, selectedCategory,setSelectedRecipe}){
     return(
         <div>
             <h2> All Recipes </h2>
@@ -12,7 +12,7 @@ function RecipeList({recipes,deleteRecipe, setSelectedCategory, selectedCategory
             </div>
             <div>
                 {recipes.map((recipe)=>{
-                return <RecipeCard deleteRecipe={deleteRecipe} key={recipe.id} recipe={recipe}/>
+                return <RecipeCard deleteRecipe={deleteRecipe} key={recipe.id} recipe={recipe} setSelectedRecipe={setSelectedRecipe}/>
                 })}
             </div>    
         </div>

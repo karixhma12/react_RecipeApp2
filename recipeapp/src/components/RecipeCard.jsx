@@ -1,12 +1,12 @@
 
 
 
-function RecipeCard({recipe,deleteRecipe}){
+function RecipeCard({recipe,deleteRecipe, setSelectedRecipe}){
     return(
-        <div>
+        <div onClick={()=>setSelectedRecipe(recipe)}>
             <h2> {recipe.title} </h2>
             <p> {recipe.category}</p>
-            <button onClick={()=>deleteRecipe(recipe.id)}> Delete </button>
+            <button onClick={(e)=>{e.stopPropagation();deleteRecipe(recipe.id)}}> Delete </button>
         </div>
     )
 }

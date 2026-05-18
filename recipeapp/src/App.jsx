@@ -6,6 +6,7 @@ import AddRecipeForm from "./components/AddRecipeForm";
 import ThemeContext from "./ThemeContext";
 import { useContext } from "react";
 import "./App.css";
+import RecipeDetail from "./components/RecipeDetail";
 
 
 function App(){
@@ -14,6 +15,7 @@ function App(){
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedRecipe,setSelectedRecipe] = useState(null);
 
   function addRecipe(newRecipe){
     setRecipes([...recipes,newRecipe]);
@@ -45,7 +47,10 @@ function App(){
     <ThemeContext.Provider value={{isDarkMode,setIsDarkMode}}>
       <div className = {isDarkMode ? 'dark' : 'light'}>
         <Navbar setShowModal={setShowModal} setSearchTerm={setSearchTerm}/>
-        <RecipeList recipes={filteredRecipes} deleteRecipe={deleteRecipe} setSelectedCategory={setSelectedCategory} selectedCategory={selectedCategory}/>
+        {selectedRecipe ? 
+         <RecipeDetail recipe={selectedRecipe} setSelectedRecipe={setSelectedRecipe}/> : 
+         <RecipeList recipes={filteredRecipes} deleteRecipe={deleteRecipe} setSelectedCategory={setSelectedCategory} selectedCategory={selectedCategory} setSelectedRecipe={setSelectedRecipe}/>
+        }
         {showModal && <AddRecipeForm setShowModal={setShowModal} addRecipe={addRecipe}/>}
       </div>
     </ThemeContext.Provider>  
