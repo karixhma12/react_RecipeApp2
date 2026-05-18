@@ -13,6 +13,7 @@ function App(){
   const [showModal, setShowModal] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
   function addRecipe(newRecipe){
     setRecipes([...recipes,newRecipe]);
@@ -33,13 +34,18 @@ function App(){
     return recipe.title.toLowerCase().includes(searchTerm.toLowerCase());
     })
   }
-  
+
+  if(selectedCategory!=="All"){
+    filteredRecipes = filteredRecipes.filter(recipe=>{
+      return recipe.category===selectedCategory;
+    })
+  }
 
   return(
     <ThemeContext.Provider value={{isDarkMode,setIsDarkMode}}>
       <div className = {isDarkMode ? 'dark' : 'light'}>
         <Navbar setShowModal={setShowModal} setSearchTerm={setSearchTerm}/>
-        <RecipeList recipes={filteredRecipes} deleteRecipe={deleteRecipe}/>
+        <RecipeList recipes={filteredRecipes} deleteRecipe={deleteRecipe} setSelectedCategory={setSelectedCategory} selectedCategory={selectedCategory}/>
         {showModal && <AddRecipeForm setShowModal={setShowModal} addRecipe={addRecipe}/>}
       </div>
     </ThemeContext.Provider>  
