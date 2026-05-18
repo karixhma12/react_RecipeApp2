@@ -1,0 +1,58 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background-color: #E8640C;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.Navbar_title {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.navbar_right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.Navbar_searchinput {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  width: 200px;
+}
+
+.Navbar_searchbutton, .Navbar_togglebutton, .Navbar_addrecipebutton {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.Navbar_searchbutton {
+  background-color: white;
+  color: #E8640C;
+}
+
+.Navbar_togglebutton {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.Navbar_addrecipebutton {
+  background-color: #2D2D2D;
+  color: white;
+}

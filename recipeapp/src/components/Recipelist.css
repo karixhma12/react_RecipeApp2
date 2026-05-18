@@ -1,0 +1,44 @@
+.recipe-list-container {
+  padding: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.recipe-list-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #E8640C;
+}
+
+.category-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.category-btn {
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 2px solid #E8640C;
+  background-color: transparent;
+  color: #E8640C;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.category-btn:hover {
+  background-color: #E8640C;
+  color: white;
+}
+
+.category-btn.active {
+  background-color: #E8640C;
+  color: white;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}

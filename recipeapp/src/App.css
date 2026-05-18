@@ -1,11 +1,18 @@
-.dark{
-  background-color: #1a1a1a;
-  color : white;
-  min-height: 100vh;
+*{
+  margin: 0px;
+  padding : 0px;
+  box-sizing: border-box;
+  font-family : "Segoe UI", sans-serif;
 }
 
 .light{
-  background-color: #ffffff;
-  color: black;
-  min-height : 100vh;
+  background-color: #FFF8F0;
+  color: #2D2D2D;
+  min-height: 100vh;
+}
+
+.dark{
+  background-color : #1A1A1A;
+  color: #F5F5F5;
+  min-height: 100vh;
 }

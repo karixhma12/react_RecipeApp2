@@ -1,12 +1,14 @@
-
+import "./RecipeCard.css";
 
 
 function RecipeCard({recipe,deleteRecipe, setSelectedRecipe}){
     return(
-        <div onClick={()=>setSelectedRecipe(recipe)}>
+        <div className="recipe-card" onClick={()=>setSelectedRecipe(recipe)}>
             <h2> {recipe.title} </h2>
-            <p> {recipe.category}</p>
-            <button onClick={(e)=>{e.stopPropagation();deleteRecipe(recipe.id)}}> Delete </button>
+            <div className="recipe-card-footer"> 
+                <p> {recipe.category}</p>
+            </div>           
+            <button className="delete-btn" onClick={(e)=>{e.stopPropagation();deleteRecipe(recipe.id)}}> Delete </button>
         </div>
     )
 }
